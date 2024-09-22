@@ -3,19 +3,19 @@ name: FTP Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   ftp-deploy:
-    name: Deploy to FTP
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@v2
-      - name: Deploy to FTP server
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-        server: sftp://185.27.134.117
+    - name: Checkout source code
+      uses: actions/checkout@v2
+
+    - name: Deploy to FTP server
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ftp://185.27.134.117
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
