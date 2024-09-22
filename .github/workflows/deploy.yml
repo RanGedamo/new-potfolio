@@ -19,5 +19,5 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
-        server-dir: /home/vol12_1/infinityfree.com/if0_37356873/htdocs/
+        server-dir: /htdocs/
         port: 22
