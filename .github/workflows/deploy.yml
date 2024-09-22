@@ -10,13 +10,13 @@ jobs:
     name: Deploy to FTP
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout source code
-      uses: actions/checkout@v2
-    - name: Deploy to FTP server
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
-server: ftp://185.27.134.117
-username: ${{ secrets.FTP_USERNAME }}
-password: ${{ secrets.FTP_PASSWORD }}
-local-dir: ./
-server-dir: /home/vol12_1/infinityfree.com/if0_37356873/htdocs/
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      - name: Deploy to FTP server
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+        server: ftp://185.27.134.117
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: /home/vol12_1/infinityfree.com/if0_37356873/htdocs/
